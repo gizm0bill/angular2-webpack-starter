@@ -1,0 +1,36 @@
+mixin testMixin( a='a', b='b', ...items )  
+  a( *ngIf=a )= b
+  ul(id=b)
+    each item in items
+      li= item
+
+div.card-container
+
+  h1.sample-content( x-large ) Your Content Here
+
+  hr
+
+  div
+    | For hot module reloading run
+    pre npm run start:hmr
+
+  hr
+
+  +testMixin('a','bb', 1, 2, 3, 4)
+
+  div
+
+    h4 Local State!!!
+
+    a( [routerLink]="['./']", routerLinkActive='active' ) testing
+
+    form( (ngSubmit)="submitState(localState.value)", autocomplete="off" )
+
+      input( [value]="localState.value", (input)="localState.value = $event.target.value",
+        placeholder="Submit Local State to App State", autofocus )
+
+      button( md-raised-button, color="primary" ) Submit Value 
+    
+    pre this.localState = {{ localState | json }}
+
+

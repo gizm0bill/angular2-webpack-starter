@@ -19,9 +19,10 @@ import { XLargeDirective } from './x-large';
   // Our list of styles in our component. We may add more to compose many styles together
   styleUrls: [ './home.component.css' ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.pug'
 })
 export class HomeComponent implements OnInit {
+  public a = true;
   // Set our default values
   public localState = { value: '' };
   // TypeScript public modifiers

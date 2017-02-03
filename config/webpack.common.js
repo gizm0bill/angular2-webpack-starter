@@ -168,6 +168,11 @@ module.exports = function (options) {
           exclude: [helpers.root('src', 'styles')]
         },
 
+        {
+          test: /\.(pug|jade)$/,
+          use: ['apply-loader', 'pug-loader'],
+        },
+
         /* Raw loader support for *.html
          * Returns file content as string
          *
